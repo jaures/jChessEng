@@ -1,4 +1,4 @@
-#include "chessEng.h"
+#include "../chessEng.h"
 
 //Bishop Functions
 //	Returns uint64_t[4] with all directions

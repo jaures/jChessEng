@@ -1,4 +1,4 @@
-#include "chessEng.h"
+#include "../chessEng.h"
 
 ///Knight Mask Generation Function
 //	- @Returns a U64 of Knight's Full attack at position loc 
