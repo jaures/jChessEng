@@ -14,22 +14,21 @@ uint64_t chssEng::knMsk(uint_fast8_t loc)
 		{
 			//Positive Shift
 			mask |= (IN_RANGE(loc + knShifts[i]) && RIGHT_OF(loc, loc + knShifts[i])) ?
-				(uint64_t{ 1 } << loc + knShifts[i]) : (0);
+				(U8PosToU64(loc + knShifts[i])) : (0);
 
 			//Negative Shifts
 			mask |= (IN_RANGE(loc - knShifts[i]) && LEFT_OF(loc, loc - knShifts[i])) ?
-				(uint64_t{ 1 } << loc - knShifts[i]) : (0);
+				(U8PosToU64(loc - knShifts[i])) : (0);
 		}
 		else
 		{
 			//Positive Shift
 			mask |= (IN_RANGE(loc + knShifts[i]) && LEFT_OF(loc, loc + knShifts[i])) ?
-				(uint64_t{ 1 } << loc + knShifts[i]) : (0);
+				(U8PosToU64(loc + knShifts[i])) : (0);
 
 			//Negative Shifts
 			mask |= (IN_RANGE(loc - knShifts[i]) && RIGHT_OF(loc, loc - knShifts[i])) ?
-				(uint64_t{ 1 } << loc - knShifts[i]) : (0);
-
+				(U8PosToU64(loc - knShifts[i])) : (0);
 		}
 	}
 
