@@ -1,7 +1,6 @@
 #pragma once
 #include "engHistory.h"
-#include "auxFuncts.h"
-#include "chessEng.h"
+
 
 class gBB
 {

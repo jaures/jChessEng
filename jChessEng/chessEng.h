@@ -1,6 +1,7 @@
 #pragma once
 #include "auxStructs.h"
 
+
 class chssEng
 {
 public:
@@ -17,6 +18,10 @@ private:
 	uint64_t knMask[64];	//Knight Mask	
 	uint64_t rkMask[64][4];	//Rook Mask
 	uint64_t pwMask[2][56][2];	//Pawn Mask
+
+	//GameBoard
+	//gBB gameBoard;
+	
 
 
 #pragma endregion
@@ -75,6 +80,16 @@ private:
 
 #pragma endregion
 
+#pragma region Mask Initialization Functions
+	//Initialize all the Masks
+	void initMasks();
+
+	void initBP();		//Initialize the Bishop Masks
+	void initKN();		//Initialize the Knight Masks
+	void initRK();		//Initialize the Rook Masks
+	void initPW();		//Initialize the Pawn Masks
+
+#pragma endregion
 
 #pragma region Move Generation Functions
 	//Generate The Actual Move Mask Based on Current GameBoard
