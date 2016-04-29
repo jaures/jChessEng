@@ -9,6 +9,14 @@ public:
 
 private:
 #pragma region Variables
+	///Variables
+
+	//Move Generation Masks
+	uint64_t kgMask[64];	//King Mask
+	uint64_t bpMask[64][4];	//Bishop Mask
+	uint64_t knMask[64];	//Knight Mask	
+	uint64_t rkMask[64][4];	//Rook Mask
+	uint64_t pwMask[2][56][2];	//Pawn Mask
 
 
 #pragma endregion
