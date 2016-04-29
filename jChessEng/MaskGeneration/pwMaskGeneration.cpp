@@ -3,20 +3,22 @@
 ///Pawn Functions
 
 //	Returns U64[2] of White Pawn Attack and Moveable Mask at position loc
-uint64_t* W_pwMsk(uint_fast8_t loc)
+uint64_t* chssEng::W_pwMsk(uint_fast8_t loc)
 {
+	uint64_t mask[2] = { pwMV(loc), pwATK(loc) };
 
-	return nullptr;
+	return mask;
 }
 
 //	Returns U64[2] of Black Pawn Attack and Moveable Mask at position loc
-uint64_t* B_pwMsk(uint_fast8_t loc)
+uint64_t* chssEng::B_pwMsk(uint_fast8_t loc)
 {
-	return nullptr;
+	uint64_t mask[2] = { pwMV(63 - loc), pwATK(63 - loc) };
+	return mask;
 }
 
 //	Returns U64 of Pawns Moveable Mask
-uint64_t pwMV(uint_fast8_t loc)
+uint64_t chssEng::pwMV(uint_fast8_t loc)
 {
 	uint64_t mask = 0;
 	
@@ -27,11 +29,11 @@ uint64_t pwMV(uint_fast8_t loc)
 	mask |= (U8PosToU64(loc)  && RANK(2)) ? (U8PosToU64(loc + 16)) : (0);
 	
 
-	return 0;
+	return mask;
 }
 
 //	Returns U64 of Pawns Attackable Mask
-uint64_t pwATK(uint_fast8_t loc)
+uint64_t chssEng::pwATK(uint_fast8_t loc)
 {
 	uint64_t mask = 0;
 
@@ -43,5 +45,5 @@ uint64_t pwATK(uint_fast8_t loc)
 		mask |= (IN_RANGE(loc + 9) && RIGHT_OF(loc, loc + 9)) ? 
 			(U8PosToU64(loc + 9)) : (0);
 
-	return 0;
+	return mask;
 }
