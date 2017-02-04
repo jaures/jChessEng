@@ -109,7 +109,7 @@ _inline static uint64_t RANK(uint_fast8_t r)
 
 ///File
 //	Returns U64 of the @fth file with respect to white
-_inline static uint64_t FILLE(uint_fast8_t f)
+_inline static uint64_t FILE(uint_fast8_t f)
 {
 	return uint64_t{ 0x101010101010101 } << (f-1)%8;
 }
